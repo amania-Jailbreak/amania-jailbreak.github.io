@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on amania Tools</title><link>https://www.amania-tools.com/page/</link><description>Recent content in Pages on amania Tools</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.amania-tools.com/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Archives</title><link>https://www.amania-tools.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.amania-tools.com/archives/</guid><description/></item><item><title>About</title><link>https://www.amania-tools.com/about/</link><pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate><guid>https://www.amania-tools.com/about/</guid><description>&lt;p>このサイトはHugoとGithub Pagesを使用しています&lt;/p>
+&lt;p>CasioTweaksというプロジェクト内でソフトウェアを制作しており
+amaniaが制作したソフトウェアは記述がない場合CasioTweaks Licenseが適応されます(Lisenseだっけ まぁ利用規約があります)&lt;/p>
+&lt;p>てかこのサイト見る人皆無なんだから敬語じゃなくてもよくね?
+今さいろいろ作りたいんだけど受験でなんもできない現状
+これ書いてないで勉強しろってことなんだけどさ 受かるかなぁ&lt;/p></description></item><item><title>Links</title><link>https://www.amania-tools.com/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.amania-tools.com/links/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="nt">links&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://www.typescriptlang.org&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ts-logo-128.jpg&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Lisence</title><link>https://www.amania-tools.com/lisence/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.amania-tools.com/lisence/</guid><description>&lt;h1 id="利用規約">利用規約&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>個人情報の収集&lt;/strong>
+CasioTweaksが作成するソフトウェアの中にはユーザー名やパスワードの作成 メールアドレスの入力など
+求められる場合もございますがCasioTweaksが運営するサーバーに送信されることはありません
+APIに使用される場合もございますが入力前に使用するAPIの表記等記載されますのでしっかりとご確認ください
+&lt;strong>個人情報等はCasioTweaksでは使用、保管されることはなくAPI以外基本的にローカルで処理されます&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ソフトウェアの使用について&lt;/strong>
+CasioTweaksが作成するソフトウェアを使用する場合はすべて自己責任でお使いください。
+CasioTweaks製ソフトウェアで損害が発生した場合、&lt;strong>すべて責任を負いかねます&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>デコンパイルや改造ソフトウェアの使用について&lt;/strong>
+CasioTweaksが作成するソフトウェアはOSSのものもございますが
+OSSではないものでのデコンパイルは公認しておらず
+さらに改造版の使用については損害が発生しても&lt;strong>責任を負いかねます&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>OSSのソフトウェアの再配布、改変について&lt;/strong>
+OSSのソフトウェアについては再配布して大丈夫ですが再配布する際は
+バージョンの表記 ソフト名の表記 開発元の表記を行ってください
+改変について 改変をする際は見た目だけテキストだけなどの改変はお止めください
+改変を行い際は機能に明確な変更をし 改変元のソフトウェアを記述しライセンスはCasioTweaksのものに準拠してください
+CasioTweaksのライセンスに準拠できない &lt;strong>一部準拠できない場合はCasioTweaksにご連絡ください&lt;/strong>
+ライセンスを併用することも可能です &lt;strong>ライセンスの記述は必ず行ってください&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>その他&lt;/strong>
+amaniaは日本語を完全にマスターしているわけではなく一部おかしい部分もございます
+んでこいつはグループでもないのでメンバー募集はしてないです
+amaniaが作成するソフトウェアは記述がなくともCasioTweaksのライセンスが適応されます&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Notification</title><link>https://www.amania-tools.com/notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.amania-tools.com/notification/</guid><description/></item><item><title>Search</title><link>https://www.amania-tools.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.amania-tools.com/search/</guid><description/></item></channel></rss>

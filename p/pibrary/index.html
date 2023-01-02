@@ -1,0 +1,277 @@
+<!doctype html><html lang dir=ltr>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="PibraryとはPythonで作成されたビルドされていないOSSソフトウェアを動かすためのソフトになります Pibraryを使用すれば
+ Pythonでビルド(exeにコンパイル)などをせずに配布することができます Pythonの仮想環境もどきが作れます(アプリケーションごとに環境が生成されその中にモジュールがインストールされます 仮想環境のみでは使用できません)  PibraryにはPython3.10 pipが同梱されておりモジュールは標準の状態から手を加えておらず Pibraryに必要なモジュールは別の場所に隔離されていますのでPythonにほかのモジュールはインストールされていません
+仕組み PibraryはEelとElectronによって実現しています .pa拡張子をアプリ内で指定しインストールするとpaの中にあるtxtファイルからモジュールをそのアプリ専用のフォルダにインストールしアプリを実行するときはそこからモジュールをインポートするように指定しますインストールしたフォルダ内にあるmain.pyのmain関数を実行します(main関数はなくても大丈夫ですがPibrary内部でエラーが発生します 支障はありません) (Pibrary本体もビルドされていないため簡略化した方法で同じように起動します)
+paファイル Pibraryにpaファイルを使用してアプリケーションをインストールします
+1 2 3 4  [appname].pa |- [app-identifier] (appfoldername) |- appinfo.ini (App information) |- requirements.txt (Required modules)   このようなフォルダ構造になっておりapp-identifierにはappinfoに記述したidentifierと同じ名前にします この中にアプリ本体を配置しモジュールとアプリ情報を記載しzip形式で圧縮して.pa拡張子にします
+appinfo.ini Pibraryがアプリを管理するためにインストール時に読み取る情報が書かれているファイルです
+1 2 3 4 5 6  [識別子] name = アプリ名 developer = 開発者名 description = 詳細 icon = iconURL identifier = 識別子   Download Pibrary public beta(PB) Download Ver 1."><title>Pibrary</title>
+<link rel=canonical href=https://www.amania-tools.com/p/pibrary/>
+<link rel=stylesheet href=/scss/style.min.b2f78bbd1901f0b6d7dc7c0e7d69205d0fd88fec141131eeb524d3ae9289b5e1.css><meta property="og:title" content="Pibrary">
+<meta property="og:description" content="PibraryとはPythonで作成されたビルドされていないOSSソフトウェアを動かすためのソフトになります Pibraryを使用すれば
+ Pythonでビルド(exeにコンパイル)などをせずに配布することができます Pythonの仮想環境もどきが作れます(アプリケーションごとに環境が生成されその中にモジュールがインストールされます 仮想環境のみでは使用できません)  PibraryにはPython3.10 pipが同梱されておりモジュールは標準の状態から手を加えておらず Pibraryに必要なモジュールは別の場所に隔離されていますのでPythonにほかのモジュールはインストールされていません
+仕組み PibraryはEelとElectronによって実現しています .pa拡張子をアプリ内で指定しインストールするとpaの中にあるtxtファイルからモジュールをそのアプリ専用のフォルダにインストールしアプリを実行するときはそこからモジュールをインポートするように指定しますインストールしたフォルダ内にあるmain.pyのmain関数を実行します(main関数はなくても大丈夫ですがPibrary内部でエラーが発生します 支障はありません) (Pibrary本体もビルドされていないため簡略化した方法で同じように起動します)
+paファイル Pibraryにpaファイルを使用してアプリケーションをインストールします
+1 2 3 4  [appname].pa |- [app-identifier] (appfoldername) |- appinfo.ini (App information) |- requirements.txt (Required modules)   このようなフォルダ構造になっておりapp-identifierにはappinfoに記述したidentifierと同じ名前にします この中にアプリ本体を配置しモジュールとアプリ情報を記載しzip形式で圧縮して.pa拡張子にします
+appinfo.ini Pibraryがアプリを管理するためにインストール時に読み取る情報が書かれているファイルです
+1 2 3 4 5 6  [識別子] name = アプリ名 developer = 開発者名 description = 詳細 icon = iconURL identifier = 識別子   Download Pibrary public beta(PB) Download Ver 1.">
+<meta property="og:url" content="https://www.amania-tools.com/p/pibrary/">
+<meta property="og:site_name" content="amania Tools">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Python"><meta property="article:tag" content="CasioTweaks"><meta property="article:tag" content="Software"><meta property="article:published_time" content="2022-12-31T15:14:55+09:00"><meta property="article:modified_time" content="2022-12-31T15:14:55+09:00"><meta property="og:image" content="https://github.com/amania-Jailbreak/amania-jailbreak.github.io/raw/master/Pibrary-Hed.png">
+<meta name=twitter:title content="Pibrary">
+<meta name=twitter:description content="PibraryとはPythonで作成されたビルドされていないOSSソフトウェアを動かすためのソフトになります Pibraryを使用すれば
+ Pythonでビルド(exeにコンパイル)などをせずに配布することができます Pythonの仮想環境もどきが作れます(アプリケーションごとに環境が生成されその中にモジュールがインストールされます 仮想環境のみでは使用できません)  PibraryにはPython3.10 pipが同梱されておりモジュールは標準の状態から手を加えておらず Pibraryに必要なモジュールは別の場所に隔離されていますのでPythonにほかのモジュールはインストールされていません
+仕組み PibraryはEelとElectronによって実現しています .pa拡張子をアプリ内で指定しインストールするとpaの中にあるtxtファイルからモジュールをそのアプリ専用のフォルダにインストールしアプリを実行するときはそこからモジュールをインポートするように指定しますインストールしたフォルダ内にあるmain.pyのmain関数を実行します(main関数はなくても大丈夫ですがPibrary内部でエラーが発生します 支障はありません) (Pibrary本体もビルドされていないため簡略化した方法で同じように起動します)
+paファイル Pibraryにpaファイルを使用してアプリケーションをインストールします
+1 2 3 4  [appname].pa |- [app-identifier] (appfoldername) |- appinfo.ini (App information) |- requirements.txt (Required modules)   このようなフォルダ構造になっておりapp-identifierにはappinfoに記述したidentifierと同じ名前にします この中にアプリ本体を配置しモジュールとアプリ情報を記載しzip形式で圧縮して.pa拡張子にします
+appinfo.ini Pibraryがアプリを管理するためにインストール時に読み取る情報が書かれているファイルです
+1 2 3 4 5 6  [識別子] name = アプリ名 developer = 開発者名 description = 詳細 icon = iconURL identifier = 識別子   Download Pibrary public beta(PB) Download Ver 1."><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://github.com/amania-Jailbreak/amania-jailbreak.github.io/raw/master/Pibrary-Hed.png">
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header>
+<figure class=site-avatar>
+<a href=/>
+<img src=/img/avatar_huc2f51f6103bee699cab36e9871918f5f_95299_300x0_resize_box_3.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a>
+</figure>
+<div class=site-meta>
+<h1 class=site-name><a href=/>amania Tools</a></h1>
+<h2 class=site-description>amania(主)が制作するソフトウェアを公開したりブログを書いたりするためのサイト 気まぐれで製作するので更新頻度は壊滅的です.</h2>
+</div>
+</header><ol class=social-menu>
+<li>
+<a href=https://github.com/amania-jailbreak target=_blank title=GitHub><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/amania_jp target=_blank title=Twitter><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg>
+</a>
+</li>
+</ol><ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=/lisence/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Lisence</span>
+</a>
+</li>
+<li>
+<a href=/notification/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M21 14l-3-3h-7a1 1 0 01-1-1V4a1 1 0 011-1h9a1 1 0 011 1v10"/><path d="M14 15v2a1 1 0 01-1 1H6l-3 3V11a1 1 0 011-1h2"/></svg>
+<span>Notification</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=/links/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span>
+</a>
+</li>
+<div class=menu-bottom-section>
+<li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>ダークモード</span>
+</li>
+</div>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/pibrary/>
+<img src=https://github.com/amania-Jailbreak/amania-jailbreak.github.io/raw/master/Pibrary-Hed.png loading=lazy alt="Featured image of post Pibrary">
+</a>
+</div>
+<div class=article-details>
+<div class=article-title-wrapper>
+<h2 class=article-title>
+<a href=/p/pibrary/>Pibrary</a>
+</h2>
+</div>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Dec 31, 2022</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+読了時間: 1分
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>PibraryとはPythonで作成されたビルドされていないOSSソフトウェアを動かすためのソフトになります
+Pibraryを使用すれば</p>
+<ul>
+<li>Pythonでビルド(exeにコンパイル)などをせずに配布することができます</li>
+<li>Pythonの仮想環境もどきが作れます(アプリケーションごとに環境が生成されその中にモジュールがインストールされます 仮想環境のみでは使用できません)</li>
+</ul>
+<p>PibraryにはPython3.10 pipが同梱されておりモジュールは標準の状態から手を加えておらず
+Pibraryに必要なモジュールは別の場所に隔離されていますのでPythonにほかのモジュールはインストールされていません</p>
+<h2 id=仕組み>仕組み</h2>
+<p>PibraryはEelとElectronによって実現しています
+.pa拡張子をアプリ内で指定しインストールするとpaの中にあるtxtファイルからモジュールをそのアプリ専用のフォルダにインストールしアプリを実行するときはそこからモジュールをインポートするように指定しますインストールしたフォルダ内にあるmain.pyのmain関数を実行します(main関数はなくても大丈夫ですがPibrary内部でエラーが発生します 支障はありません)
+(Pibrary本体もビルドされていないため簡略化した方法で同じように起動します)</p>
+<h2 id=paファイル>paファイル</h2>
+<p>Pibraryにpaファイルを使用してアプリケーションをインストールします</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[appname].pa
+ |- [app-identifier] (appfoldername)
+ |- appinfo.ini (App information)
+ |- requirements.txt (Required modules)
+</code></pre></td></tr></table>
+</div>
+</div><p>このようなフォルダ構造になっておりapp-identifierにはappinfoに記述したidentifierと同じ名前にします この中にアプリ本体を配置しモジュールとアプリ情報を記載しzip形式で圧縮して.pa拡張子にします</p>
+<h2 id=appinfoini>appinfo.ini</h2>
+<p>Pibraryがアプリを管理するためにインストール時に読み取る情報が書かれているファイルです</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[識別子]
+name = アプリ名
+developer = 開発者名
+description = 詳細
+icon = iconURL
+identifier = 識別子
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=download>Download</h2>
+<h3 id=pibrary-public-betapb>Pibrary public beta(PB)</h3>
+<p><a class=link href=https://bowlroll.net/file/287289 target=_blank rel=noopener>Download Ver 1.0PB</a></p>
+<h3 id=pibrary-stable>Pibrary stable</h3>
+<p>しばらくお待ちください</p>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/python/>Python</a>
+<a href=/tags/casiotweaks/>CasioTweaks</a>
+<a href=/tags/software/>Software</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0 14:12 2022/12/31</span>
+</section>
+</footer>
+</article>
+<div class=disqus-container>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//hugo-theme-stack.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+<style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+<script>window.addEventListener('onColorSchemeChange',a=>{typeof DISQUS=='object'&&DISQUS.reset({reload:!0})})</script>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2023 amania Tools
+</section>
+<section class=powerby>
+このWebサイトにはCasioTweaksのライセンスが適応されます <br>
+Project by CasioTweaks
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">目次</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#仕組み>仕組み</a></li>
+<li><a href=#paファイル>paファイル</a></li>
+<li><a href=#appinfoini>appinfo.ini</a></li>
+<li><a href=#download>Download</a>
+<ol>
+<li><a href=#pibrary-public-betapb>Pibrary public beta(PB)</a></li>
+<li><a href=#pibrary-stable>Pibrary stable</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>
